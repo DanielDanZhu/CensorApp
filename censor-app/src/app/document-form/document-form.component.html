@@ -1,0 +1,17 @@
+<input #newDocument
+  (keyup.enter)="getDocument(newDocument.value)">
+<button (click)="getDocument(newDocument.value)">Submit Document</button>
+
+<input #newPhrase
+  (keyup.enter)="parsePhrase(newPhrase.value)">
+<button (click)="parsePhrase(newPhrase.value)">Submit Phrase</button>
+<div>
+  <ul>
+    <li *ngFor = "let phrase of phraseList">
+      {{phrase}}
+  </ul>
+</div>
+
+<app-child
+  [currDoc] = "currDoc"
+  [phraseList] = "phraseList"></app-child>
