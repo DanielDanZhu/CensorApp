@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class OutputFormComponent implements OnInit {
   //Inherited variables from parent (document-form)
   @Input() currDoc: string;
-  @Input() phraseList: String[] = [];
+  @Input() phraseList: string[] = [];
+  output: string;
 
   constructor() {
   }
@@ -17,7 +18,10 @@ export class OutputFormComponent implements OnInit {
   }
 
   generate() {
-
+    this.output = this.currDoc;
+    for (let phrase of this.phraseList) {
+      this.output = this.output.replace(phrase, "XXXX")
+    }
   }
 
 }

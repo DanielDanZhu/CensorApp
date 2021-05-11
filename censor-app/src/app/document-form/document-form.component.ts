@@ -6,7 +6,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./document-form.component.css']
 })
 export class DocumentFormComponent implements OnInit {
-  @ViewChild('newDocument') inputName;
+  @ViewChild('newDocument') newDocument;
+  @ViewChild('newPhrase') newPhrase;
   currDoc: string;
   phraseList: String[] = [];
 
@@ -17,14 +18,21 @@ export class DocumentFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Updates document and clears document text input
   getDocument(text: string) {
     this.currDoc = text;
-    console.log(this.currDoc);
-    this.inputName.nativeElement.value = '';
+    this.newDocument.nativeElement.value = '';
+  }
+
+  //Clears document and clears document text input
+  clearDocument() {
+    this.currDoc = '';
+    this.newDocument.nativeElement.value = '';
   }
 
   parsePhrase(text: string) {
-    this.inputName.nativeElement.value = '';
+    //Clears phrase text input
+    this.newPhrase.nativeElement.value = '';
 
     let copy = text;
     while (copy.length != 0) {
@@ -50,6 +58,11 @@ export class DocumentFormComponent implements OnInit {
         copy = copy.slice(1);
       }
     }
+  }
+
+  clearPhrases() {
+    this.phraseList = [];
+    this.newPhrase.nativeElement.value = '';
   }
 
 }

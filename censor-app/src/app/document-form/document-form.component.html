@@ -1,17 +1,36 @@
-<input #newDocument
-  (keyup.enter)="getDocument(newDocument.value)">
-<button (click)="getDocument(newDocument.value)">Submit Document</button>
+<div class="input">
+  <div class="layout" >
+    <div class="document-form">
+      <mat-form-field>
+        <mat-label>Document Text</mat-label>
+        <textarea matInput #newDocument
+          (keyup.enter)="getDocument(newDocument.value)"></textarea>
+      </mat-form-field> <br/>
+      <button mat-raised-button color="primary" (click)="getDocument(newDocument.value)">Submit</button>
+      &nbsp;
+      <button mat-raised-button color="accent" (click)="clearDocument()">Clear</button>
+    </div>
 
-<input #newPhrase
-  (keyup.enter)="parsePhrase(newPhrase.value)">
-<button (click)="parsePhrase(newPhrase.value)">Submit Phrase</button>
-<div>
-  <ul>
-    <li *ngFor = "let phrase of phraseList">
-      {{phrase}}
-  </ul>
+    <div class="phrase-form">
+      <mat-form-field>
+        <mat-label>Censored Keywords/Phrases</mat-label>
+        <textarea matInput #newPhrase
+          (keyup.enter)="parsePhrase(newPhrase.value)"></textarea>
+      </mat-form-field> <br/>
+      <button mat-raised-button color="primary" (click)="parsePhrase(newPhrase.value)">Submit</button>
+      &nbsp;
+      <button mat-raised-button color="accent" (click)="clearPhrases()">Clear</button>
+      <div class="phrase-list">
+        <ul>
+          <li *ngFor = "let phrase of phraseList">
+            {{phrase}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <app-child
+    [currDoc] = "currDoc"
+    [phraseList] = "phraseList">
+  </app-child>
 </div>
-
-<app-child
-  [currDoc] = "currDoc"
-  [phraseList] = "phraseList"></app-child>
