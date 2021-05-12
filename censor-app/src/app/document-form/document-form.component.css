@@ -25,19 +25,18 @@ mat-form-field {
   width: 80%;
 }
 
-
 .document-preview {
   margin: auto;
-  padding-top: 40px;
+  margin-top: 30px;
   width: 80%;
-  height: 30%;
+  height: 40%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .phrase-list {
-  margin-top: 40px;
-  height: 30%;
+  margin-top: 30px;
+  height: 40%;
   overflow-y: scroll;
   overflow-x: hidden;
 }

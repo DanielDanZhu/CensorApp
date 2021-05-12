@@ -1,6 +1,15 @@
 .output {
   justify-content: center;
-  padding-top: 25px;
+  margin: auto;
+  margin-top: 30px;
+  width: 80%;
+  height: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 button {

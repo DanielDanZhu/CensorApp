@@ -1,22 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'document-form',
   templateUrl: './document-form.component.html',
   styleUrls: ['./document-form.component.css']
 })
-export class DocumentFormComponent implements OnInit {
+export class DocumentFormComponent {
   @ViewChild('newDocument') newDocument;
   @ViewChild('newPhrase') newPhrase;
   currDoc: string;
   phraseList: String[] = [];
-
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-  }
 
   //Updates document and clears document text input
   getDocument(text: string) {
