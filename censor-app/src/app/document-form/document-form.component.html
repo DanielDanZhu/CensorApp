@@ -9,6 +9,9 @@
       <button mat-raised-button color="primary" (click)="getDocument(newDocument.value)">Submit</button>
       &nbsp;
       <button mat-raised-button color="accent" (click)="clearDocument()">Clear</button>
+      <div class="document-preview">
+        {{currDoc}}
+      </div>
     </div>
 
     <div class="phrase-form">

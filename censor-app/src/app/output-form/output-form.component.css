@@ -1,0 +1,9 @@
+.output {
+  justify-content: center;
+  padding-top: 25px;
+}
+
+button {
+  margin-top: 40px;
+  width: 100px;
+}
