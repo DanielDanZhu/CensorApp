@@ -31,6 +31,11 @@ export class DocumentFormComponent {
     let tempList = [];
     let copy = text;
     while (copy.length != 0) {
+      //Removes spaces at end
+      while (copy.lastIndexOf(" ") == copy.length - 2) {
+        copy = copy.slice(0, -1);
+      }
+
       //Case: phrase in quotes/double quotes
       if (copy.indexOf('\'') == 0 || copy.indexOf('"') == 0) {
         let quote = copy.charAt(0);
@@ -42,7 +47,7 @@ export class DocumentFormComponent {
           return
         }
         tempList.push(copy.substring(0, copy.indexOf(quote)))
-        copy = copy.substring(copy.indexOf(quote)+1);
+        copy = copy.substring(copy.indexOf(quote) + 2);
       }
       //Case: singular keyword
       else {
@@ -55,8 +60,8 @@ export class DocumentFormComponent {
         copy = copy.substring(copy.indexOf(" ") + 1);
       }
       //Eliminates commas and spaces at the start of the string
-      while (copy.charAt(0) == ' ' || copy.charAt(0) == ',') {
-        copy = copy.slice(1);
+      while (copy.indexOf(' ') == 0 || copy.indexOf(',') == 0 ) {
+        copy = copy.slice(1, copy.length);
       }
     }
 

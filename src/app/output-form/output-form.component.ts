@@ -21,9 +21,10 @@ export class OutputFormComponent {
       return
     }
     this.output = this.currDoc;
+
     //handles case insensitve replacement
     for (let phrase of this.phraseList) {
-      var reg = new RegExp(phrase, 'ig');
+      var reg = new RegExp(phrase.trim(), 'gi');
       this.output = this.output.replace(reg, "XXXX")
     }
     //shows download button
