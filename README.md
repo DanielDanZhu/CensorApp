@@ -1,27 +1,18 @@
 # CensorApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+https://cia-censor-app.web.app/
 
-## Development server
+Censor App is an Angular app designed to censor keywords and phrases from document text, replacing them with "XXXX." 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![image](https://user-images.githubusercontent.com/9311902/118863747-47e56100-b8ad-11eb-8778-defe39f03447.png)
 
-## Code scaffolding
+## How to Use
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Navigate to the link above
+2. Fill in the "Document Text" and "Censored Keywords/Phrases" fields and submit. 
+3. The "Censored Keywords/Phrases" field accepts strings of singular keywords and phrases in quotes separated by spaces or commas
+4. Click generate
+5. Copy output or download .txt output file
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technical Details
+This app was built in Angular, deployed to Firebase, and uses Angular Material for styling. Other libraries used include file-saver for file download functionality.
